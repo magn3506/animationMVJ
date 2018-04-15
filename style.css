@@ -1,0 +1,522 @@
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+
+#scene{
+
+    width: 100vw;
+    /*= 1600px*/
+    height: 56.25vw;
+    /*= 900px*/
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+#himmel{
+
+   height: 56.25vw;
+    width: 100vw;
+
+    background-size: 100% 100%;
+
+    background-color: skyblue;
+    position: absolute;
+
+    z-index: -1;
+
+     overflow: hidden;
+}
+
+
+
+
+#mg{
+
+    height: 100vw;
+    width: 100vw;
+    background-image: url(mellemgrund.svg);
+    background-size: 100% 100%;
+
+    top: -10vw;
+    position: absolute;
+
+    z-index: 1;
+
+
+}
+
+.hus1{
+    background-image: url(hus1.svg);
+    background-size: 100% 100%;
+    height: 10vw;
+    width: 10vw;
+
+    position: absolute;
+    left: 15vw;
+    top: 43vw;
+
+    transform: scale(3);
+
+}
+
+.hus2{
+     background-image: url(hus2.svg);
+    background-size: 100% 100%;
+    height: 10vw;
+    width: 10vw;
+
+    position: absolute;
+    left: 44vw;
+    top: 32vw;
+
+    transform: scale(5);
+
+}
+
+.hus3{
+     background-image: url(hus3.svg);
+    background-size: 100% 100%;
+    height: 10vw;
+    width: 10vw;
+
+    position: absolute;
+    left: 73vw;
+    top: 40vw;
+
+    transform: scale(4);
+
+
+}
+
+.sky {
+    background-image: url(sky.svg);
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    transform: scale(.1);
+
+
+
+
+}
+
+.fsky1 {
+
+    top: -23vw;
+    animation: drift 25s linear infinite;
+
+}
+
+.fsky2 {
+
+    top: -18vw;
+
+    transform: scale(.2);
+    animation: drift 45s 5s linear infinite backwards;
+
+
+
+}
+
+.fsky3{
+        top: -25vw;
+    animation: drift 30s 10s linear infinite backwards;
+}
+
+.fsky4 {
+
+    top:8vw;
+
+    transform: scale(.22);
+    animation: drift 40s 8s linear infinite backwards;
+
+}
+
+@keyframes drift {
+    from {
+        left: -60vw;
+
+    }
+
+    to {
+        left: 60vw;
+    }
+}
+
+
+/*BJORN*/
+
+#bjorn_container{
+
+    position: absolute;
+
+    width:  350px;
+    height: 500px;
+}
+
+.bjorn_position_in{
+    position: absolute;
+    left: 2vw;
+
+}
+
+.bjorn_position_out{
+    position: absolute;
+    left: -46vw;
+
+}
+
+
+
+.bjorn_move {
+
+    position: absolute;
+
+    z-index: 4;
+
+   animation: move 3s 3s linear backwards;
+
+
+
+
+}
+
+@keyframes move{
+
+    0%{   left:-46vw;
+
+
+    }
+
+    100%{
+
+         left: 2vw;
+    }
+}
+
+
+
+#bjorn_sprite{
+
+    position: absolute;
+    z-index: 6;
+
+
+
+    width: 60vw;
+    height: 86vw;
+
+    background-image: url(SVG/bjornsprite2.svg);
+    background-size: 900% 400%;
+
+    transform: scale(.4);
+
+    left: 0vw;
+    top: 0vw;
+
+}
+
+.walk {
+/*
+    animation-name: walk;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(8);
+    animation-direction: normal;
+*/
+
+    animation: walk 1.5s infinite steps(9) normal;
+
+}
+
+    @keyframes walk {
+
+    0%{
+        background-position: 0 0 ;
+
+
+
+    }
+
+    100%{
+        background-position: -900% 0;
+
+
+    }
+
+
+}
+
+.megafon{
+    animation-name: megafon;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(8);
+    animation-direction: normal;
+
+}
+
+   @keyframes megafon {
+
+    0%{
+        background-position: 0 -200% ;
+
+    }
+
+       100%{
+
+           background-position: -800% -200% ;
+       }
+
+    }
+
+.bjorn_jump{
+
+
+
+    animation-name: bjorn_jump;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(4);
+    animation-direction: normal;
+
+
+
+
+
+}
+
+ @keyframes bjorn_jump {
+
+    0%{
+        background-position: 0 -100% ;
+
+    }
+
+       100%{
+
+           background-position: -400% -100% ;
+       }
+
+    }
+
+/*FROG*/
+
+#frog_container{
+
+    position: absolute;
+
+    width:  350px;
+    height: 500px;
+}
+
+.frog_position_in{
+    left: -5vw;
+
+}
+
+.frog_position_out{
+    left: 35vw;
+
+}
+
+
+
+.frog_move {
+
+    position: absolute;
+
+    z-index: 4;
+
+   animation: fmove 5s 2s linear backwards;
+
+
+
+
+
+}
+
+@keyframes fmove{
+
+    0%{   left:35vw;
+
+
+    }
+
+    100%{
+
+         left: -5vw;
+    }
+}
+
+
+#frog_sprite{
+
+    position: absolute;
+
+
+
+
+    z-index: 6;
+
+    width: 62vw;
+    height: 90vw;
+
+    background-image: url(SVG/frogsprite2.svg);
+    background-size: 800% 500%;
+
+    transform: scale(.4);
+
+
+    left: 50vw;
+    top: -6vw;
+
+}
+
+
+
+
+.fwalk{
+
+    animation-name: fwalk;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(8);
+    animation-direction: normal;
+}
+
+   @keyframes fwalk {
+
+    0%{
+        background-position: 0 0 ;
+
+
+
+    }
+
+    100%{
+        background-position: 800% 0;
+
+        }
+
+}
+
+
+ .frog_jump{
+
+    animation-name: frog_jump;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(4);
+    animation-direction: normal;
+
+
+
+}
+
+ @keyframes frog_jump {
+
+    0%{
+        background-position: 0 -100% ;
+
+    }
+
+       100%{
+
+           background-position: -400% -100% ;
+       }
+
+    }
+
+.frog_talk{
+
+    animation-name: frog_talk;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(8);
+    animation-direction: normal;
+
+
+
+}
+
+ @keyframes frog_talk {
+
+    0%{
+        background-position: 0 -200% ;
+
+    }
+
+       100%{
+
+           background-position: -800% -200% ;
+       }
+
+    }
+
+   .fpull{
+
+    animation-name: fpull;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(8);
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+
+
+
+}
+
+ @keyframes fpull {
+
+    0%{
+        background-position: 0 -300% ;
+
+    }
+
+       100%{
+
+           background-position: 800% -300% ;
+       }
+
+    }
+
+.fshoot{
+
+
+    animation-name: fshoot;
+    animation-duration: .2s;
+    animation-iteration-count: 6;
+    animation-timing-function: steps(8);
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+
+
+
+}
+
+ @keyframes fshoot {
+
+    0%{
+        background-position: 0 -400% ;
+
+    }
+
+       100%{
+
+           background-position: 800% -400% ;
+       }
+
+    }
